@@ -59,12 +59,15 @@
   font-size: 1.5rem;
   color: #ffffff;
   background-color: #4a5271;
-  padding: 10px;
+  padding: 15px;
   border-radius: 10px;
   text-align: center;
   margin-bottom: 3%;
 }
 
+.reviewStars {
+  margin-top: -7%;
+}
 .button {
   font-family: "mainfont";
   font-size: 1.5rem;
@@ -193,5 +196,11 @@
   .hours {
     margin-bottom: 5%;
     width: 99%;
+  }
+}
+
+@media screen and (max-width: 364px) {
+  .reviewText {
+    font-size: 1.4rem;
   }
 }
