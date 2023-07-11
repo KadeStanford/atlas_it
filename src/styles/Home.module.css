@@ -187,5 +187,11 @@
 
   .contact {
     margin-bottom: 5%;
+    width: 99%;
+  }
+
+  .hours {
+    margin-bottom: 5%;
+    width: 99%;
   }
 }
