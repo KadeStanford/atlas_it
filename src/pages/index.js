@@ -50,6 +50,32 @@ export default function Home() {
             modal
             contentStyle={{ width: "70%", height: "70%" }}
           >
+            <div className={styles.popup}>
+              <p className={styles.popupTitle}>Get a Quote</p>
+              <form className={styles.form}>
+                <input
+                  className={styles.input}
+                  type="text"
+                  placeholder="Name"
+                />
+                <input
+                  className={styles.input}
+                  type="text"
+                  placeholder="Email"
+                />
+                <input
+                  className={styles.input}
+                  type="text"
+                  placeholder="Phone Number"
+                />
+                <textarea
+                  className={styles.input}
+                  type="text"
+                  placeholder="I was wondering about availability and rates. I need help with the following:"
+                />
+                <button className={styles.submit}>Submit</button>
+              </form>
+            </div>
             {/* Popup content */}
           </Popup>
         </div>
