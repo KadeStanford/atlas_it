@@ -2,8 +2,28 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import Popup from "reactjs-popup";
+import "reactjs-popup/dist/index.css";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const reviews = [
+  {
+    review:
+      "Smart and fast; he keeps his word and does excellent work at a very reasonable price.",
+    name: "Felix I.",
+  },
+  {
+    review:
+      "Incredibly experienced and has plenty of certifications! Gave me a great price too to work on my laptop!",
+    name: "Nicholas R.",
+  },
+  {
+    review:
+      "Fixed my problem in under 10 minutes and explained to me what the problem was. great service !!",
+    name: "Nichole D.",
+  },
+];
 
 export default function Home() {
   return (
@@ -14,7 +34,82 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${styles.main} ${inter.className}`}></main>
+      <main className={`${styles.main} ${inter.className}`}>
+        <div className={styles.topContainer}>
+          <Image
+            className={styles.logo}
+            src="/removedLogo.png"
+            alt="Atlas IT Solutions"
+            width={300}
+            height={250}
+          />
+          <p className={styles.title}>Atlas IT Solutions</p>
+          <p className={styles.subtitle}>Your Tech, Our Priority</p>
+          <Popup
+            trigger={<button className={styles.button}>Get Quote</button>}
+            modal
+            contentStyle={{ width: "70%", height: "70%" }}
+          >
+            <div className={styles.popup}>
+              <p className={styles.popupTitle}>Get a Quote</p>
+              <form className={styles.form}>
+                <input
+                  className={styles.input}
+                  type="text"
+                  placeholder="Name"
+                />
+                <input
+                  className={styles.input}
+                  type="text"
+                  placeholder="Email"
+                />
+                <input
+                  className={styles.input}
+                  type="text"
+                  placeholder="Phone Number"
+                />
+                <textarea
+                  className={styles.input}
+                  type="text"
+                  placeholder="I was wondering about availability and rates. I need help with the following:"
+                />
+                <button className={styles.submit}>Submit</button>
+              </form>
+            </div>
+          </Popup>
+        </div>
+
+        <div className={styles.container}>
+          <div className={styles.reviewBox}>
+            {reviews.map((review) => (
+              <div className={styles.review}>
+                <p className={styles.reviewText}>{review.review}</p>
+                <p className={styles.reviewName}>{review.name}</p>
+                <p className={styles.reviewStars}>★★★★★</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className={styles.containerContact}>
+          <div
+            className={styles.contact}
+            onClick={() => {
+              window.location.href = "tel:+12253056683";
+            }}
+          >
+            <p className={styles.contactTitle}>Contact Us</p>
+            <p className={styles.contactClick}>Click to Call</p>
+            <p className={styles.contactText}>Phone: (225) 305-6683</p>
+          </div>
+          <div className={styles.hours}>
+            <p className={styles.hoursTitle}>Business Hours</p>
+            <p className={styles.hoursText}>
+              Monday - Friday: 10:00 AM - 6:00 PM
+            </p>
+            <p className={styles.hoursText}>Saturday & Sunday: Closed</p>
+          </div>
+        </div>
+      </main>
     </>
   );
 }

@@ -1,0 +1,36 @@
+html {
+  background-color: #191c2d;
+}
+
+input {
+  font-family: "mainfont";
+  font-size: 0.5rem;
+  color: #ffffff;
+  background-color: #4a5271;
+  padding: 10px;
+  border-radius: 10px;
+  width: calc(40% - 20px);
+  height: auto;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 0.5%;
+}
+
+textarea {
+  font-family: "mainfont";
+  font-size: 0.5rem;
+  color: #ffffff;
+  background-color: #4a5271;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  height: calc(40vh - 100px);
+}
+
+::-webkit-input-placeholder {
+  color: rgb(255, 255, 255);
+}
